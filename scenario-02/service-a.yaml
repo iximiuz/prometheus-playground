@@ -1,0 +1,13 @@
+scrapes:
+  - status_code: '200'
+    data: |
+      foo{color="red",size="small"} 4
+      foo{color="green",size="small"} 8
+      foo{color="blue",size="small"} 16
+      foo{color="red",size="large"} 5
+      foo{color="green",size="large"} 9
+      foo{color="blue",size="large"} 17
+
+      bar{color="green",size="xlarge"} 2
+      bar{color="blue",size="large"} 7
+      bar{color="red",size="small"} 5

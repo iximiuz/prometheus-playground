@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  service-a:
+    build: ../service
+    hostname: service-a
+    environment:
+      FLASK_RUN_PORT: "5000"
+      SCRAPE_TAPE: '/var/lib/scrapes.yaml'
+    volumes:
+      - ./service-a.yaml:/var/lib/scrapes.yaml
+  service-b:
+    build: ../service
+    hostname: service-b
+    environment:
+      FLASK_RUN_PORT: "5001"
+      SCRAPE_TAPE: '/var/lib/scrapes.yaml'
+    volumes:
+      - ./service-b.yaml:/var/lib/scrapes.yaml
+  prometheus:
+    image: prom/prometheus:latest
+    entrypoint:
+      - "/bin/prometheus"
+      - "--config.file=/opt/prometheus/prometheus.yml"
+      - "--query.lookback-delta=15s"  # <-- testing shorter lookback duration
+    ports:
+      - "55055:9090"
+    volumes:
+      - ./prometheus.yml:/opt/prometheus/prometheus.yml
+

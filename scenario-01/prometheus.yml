@@ -1,0 +1,11 @@
+scrape_configs:
+  - job_name: service-a
+    scrape_interval: 4s
+    static_configs:
+      - targets: ['service-a:5000']
+
+  - job_name: service-b
+    scrape_interval: 4s
+    static_configs:
+      - targets: ['service-b:5001']
+

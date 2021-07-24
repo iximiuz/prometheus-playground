@@ -1,0 +1,24 @@
+scrapes:
+  - status_code: '200'
+    data: |
+      http_requests_total{instance="service-a-01", job="service-a", method="GET", status_code="200"} 8
+      http_requests_total{instance="service-a-01", job="service-a", method="GET", status_code="500"} 2
+      http_requests_total{instance="service-a-01", job="service-a", method="POST", status_code="200"} 7
+      http_requests_total{instance="service-a-01", job="service-a", method="POST", status_code="500"} 1 
+      actions_total{instance="service-a-01", job="service-a"} 18
+  - status_code: '200'
+    data: |
+      http_requests_total{instance="service-a-01", job="service-a", method="GET", status_code="200"} 16
+      http_requests_total{instance="service-a-01", job="service-a", method="GET", status_code="500"} 4
+      http_requests_total{instance="service-a-01", job="service-a", method="POST", status_code="200"} 15
+      http_requests_total{instance="service-a-01", job="service-a", method="POST", status_code="500"} 3 
+      actions_total{instance="service-a-01", job="service-a"} 38
+      actions_total{instance="service-a-01", job="service-a"} 26
+  - status_code: '200'
+    data: |
+      http_requests_total{instance="service-a-01", job="service-a", method="GET", status_code="200"} 32
+      http_requests_total{instance="service-a-01", job="service-a", method="GET", status_code="500"} 8
+      http_requests_total{instance="service-a-01", job="service-a", method="POST", status_code="200"} 31
+      http_requests_total{instance="service-a-01", job="service-a", method="POST", status_code="500"} 7 
+      actions_total{instance="service-a-01", job="service-a"} 78
+
